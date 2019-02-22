@@ -5,6 +5,16 @@
     <title>My blog</title>
 </head>
 <body>
-{{posts}}
+<div class="header-page">
+    <h1><a href="/">My Blog</a></h1>
+</div>
+{% for post in posts %}
+<div>
+    <p>published date : {{post.published_date}}</p>
+    <h1><a href="">{{post.title}}</a></h1>
+    <p>{{post.text|linebreaksbr}}</p>
+</div>
+{% endfor %}
+
 </body>
 </html>
