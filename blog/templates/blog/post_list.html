@@ -1,13 +1,21 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>My blog</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
 </head>
 <body>
 <div class="header-page">
     <h1><a href="/">My Blog</a></h1>
 </div>
+<div class="content container">
+    <div class="row">
+        <div class="col-md-8">
 {% for post in posts %}
 <div>
     <p>published date : {{post.published_date}}</p>
@@ -15,6 +23,8 @@
     <p>{{post.text|linebreaksbr}}</p>
 </div>
 {% endfor %}
-
+        </div>
+    </div>
+</div>
 </body>
 </html>
